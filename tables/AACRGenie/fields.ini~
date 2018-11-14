@@ -1,0 +1,76 @@
+[patientID]
+widget:type=hidden
+visibility:update=hidden
+
+[sex]
+widget:editvalues=0
+widget:label = "Sex"
+widget:type=select
+vocabulary=sex
+validators:required=1
+
+[primaryRace]
+widget:editvalues=0
+widget:label="Primary Race"
+widget:type=select
+vocabulary=race
+
+[secondaryRace]
+widget:editvalues=0
+widget:label="Secondary Race"
+widget:type=select
+vocabulary=race
+
+[tertiaryRace]
+widget:editvalues=0
+widget:label="Tertiary Race"
+widget:type=select
+vocabulary=race
+
+[ethnicity]
+widget:editvalues=0
+widget:atts:size=5
+widget:atts:style="font-size: 10pt;"
+widget:label="Ethnicity"
+widget:type=select
+vocabulary=ethnicity
+
+[birthYear]
+widget:type=hidden
+visibility:update=hidden
+
+[DOB]
+widget:label="Date of Birth (DOB)"
+widget:type=datepicker
+
+[sampleID]
+widget:type=hidden
+visibility:update=hidden
+
+[ageAtSeqReport]
+widget:type=hidden
+visibility:update=hidden
+
+[sampleType]
+widget:label="Sample Type"
+widget:type=select
+vocabulary=sampleType
+validators:required=1
+
+[oncotreeCode]
+label_link="http://oncotree.mskcc.org/oncotree/#/home"
+widget:type=lookup
+widget:table=GENIEOncotree
+widget:description="Please use the Oncotree link from MSKCC to confirm the correct code.  You may use the TPTracker search feature as well, but this does not reflect the heirarchy among terms."
+vocabulary=oncotree
+validators:required=1
+
+[seqAssayID]
+widget:label="Seq Assay ID"
+widget:type=select
+vocabulary=seqAssayID
+validators:required=1
+
+[seqDate]
+widget:type=hidden
+visibility:update=hidden

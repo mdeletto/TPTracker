@@ -1,0 +1,16 @@
+[name]
+	__sql__ = "select name from sequencing_cases"
+
+[copathID]
+        __sql__ = "select copath_id from sequencing_cases"
+
+[requestingPhysician]
+        __sql__ = "select requesting_physician from sequencing_cases"
+
+[otherMolecularTests]
+	__sql__ = "select molecularTestName from otherMolecularTests"
+
+[bool]
+        1 = YES
+        0 = NO
+

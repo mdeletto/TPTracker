@@ -1,0 +1,16 @@
+{use_macro file="Dataface_Main_Template.html"}
+	{fill_slot name="html_body"}
+		<iframe id="mainFrame" name="mainFrame" class="ui-layout-center"
+	width="100%" height="600" frameborder="0" scrolling="auto"></iframe>
+
+		<div class="ui-layout-north">North</div>
+		<div class="ui-layout-south">South</div>
+		<div class="ui-layout-east">East</div>
+		<div class="ui-layout-west">
+			{include file="master_detail/navtree.html"}
+		
+		</div>
+		
+
+	{/fill_slot}
+{/use_macro}

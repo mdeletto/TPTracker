@@ -1,0 +1,1 @@
+{"included":{"xataface\/findwidgets\/select.js":"\/var\/www\/TPL\/tumor_profiling_lab\/xataface\/modules\/g2\/js\/xataface\/findwidgets\/select.js"},"dependencies":[],"dependencyContents":{"xataface\/findwidgets\/select.js":"\/var\/www\/TPL\/tumor_profiling_lab\/xataface\/modules\/g2\/js\/xataface\/findwidgets\/select.js"},"cssIncludes":[]}

@@ -1,0 +1,11 @@
+<?php
+class actions_Run_Report_Generator {
+    function handle(&$params){
+        $app =& Dataface_Application::getInstance();
+        $query =& $app->getQuery();
+        
+        $products = df_get_records_array('targetedNGSRunQualityControlMetrics', $query)
+;
+	//echo $products['resultName']."\t".$products['instrumentName'];
+    }
+}

@@ -1,0 +1,51 @@
+<?php
+class tables_sequencing_cases
+{
+    
+    function default_sort()
+    {
+        if (!isset($_REQUEST['-sort']) and @$_REQUEST['-table'] == 'sequencing_cases') {
+            $_REQUEST['-sort'] = $_GET['-sort'] = 'req_date desc';
+        }
+    }
+    
+    function __sql__()
+    {
+        return "select t1.*,concat(t2.emailAddress) as emailAddress from sequencing_cases t1 left join emailGroups t2 on t1.email = t2.emailGroupName";
+    }
+    
+    function beforeInsert(&$record)
+    {
+        $auth =& Dataface_AuthenticationTool::getInstance();
+        $username =& $auth->getLoggedInUsername();
+        $record->setValue('creator', $username);
+        $record->setValue('modifier', $username);
+    }
+    
+    
+    function beforeUpdate(&$record)
+    {
+        // Track modifier
+        $auth =& Dataface_AuthenticationTool::getInstance();
+        $username =& $auth->getLoggedInUsername();
+        if ($username)
+            $record->setValue('modifier', $username);
+    }
+
+function valuelist__sequencing_cases()
+{
+    return array(
+        'OCP'=>'Oncomine Comprehensive Panel'
+    );
+}
+    
+    /**
+     * Trigger that is called after Course record is inserted.
+     * @param $record Dataface_Record object that has just been inserted.
+     
+     function afterInsert(&$record){
+     mail("michael.d'eletto@ynhh.org",'Subject Line', 'Message body'); 
+     }
+     */
+}
+?>

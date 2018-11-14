@@ -1,0 +1,14 @@
+[sequencing_panel]
+	OCP="Oncomine Cancer Panel"
+
+[dissection]
+	manual=manual
+	lcmd=LCMD
+
+[normal_sample]
+	buccal=buccal
+	benign LN="benign LN"
+
+
+[tumor_types]
+	__sql__ = "select tumor_types from tumorTypes"
