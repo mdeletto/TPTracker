@@ -24,7 +24,7 @@ class tables_targetedNGSRunQualityControlMetrics {
     function heatmap__htmlValue(&$record){
 	
 	$id = $record->display('resultName');
-	$files = glob("tables/targetedNGSRunQualityControlMetrics/TSimages/$id*/Bead_density_200.png");
+	$files = glob("images/$id*/Bead_density_200.png");
 
 	return "<img src='$files[0]' style='height: 60%;' />";
 
@@ -33,7 +33,7 @@ class tables_targetedNGSRunQualityControlMetrics {
     function rawMeanAccuracyPlot__htmlValue(&$record){
 	
 	$id = $record->display('resultName');
-	$files = glob("tables/targetedNGSRunQualityControlMetrics/TSimages/$id*/base_error_plot.png");
+	$files = glob("images/$id*/base_error_plot.png");
 
 	return "<img src='$files[0]' style='height: 60%;'/>";
 
@@ -42,7 +42,7 @@ class tables_targetedNGSRunQualityControlMetrics {
     function wellsBeadogram__htmlValue(&$record){
 	
 	$id = $record->display('resultName');
-	$files = glob("tables/targetedNGSRunQualityControlMetrics/TSimages/$id*/basecaller_results/wells_beadogram.png");
+	$files = glob("images/$id*/basecaller_results/wells_beadogram.png");
 
 	return "<img src='$files[0]' style='height: 60%;'/>";
 
@@ -52,7 +52,7 @@ class tables_targetedNGSRunQualityControlMetrics {
 	
 	$id = $record->display('resultName');
 	$tumor_barcode = $record->display('tumorBarcode');
-	$files = glob("tables/targetedNGSRunQualityControlMetrics/TSimages/$id*/basecaller_results/$tumor_barcode*.sparkline.png");
+	$files = glob("images/$id*/basecaller_results/$tumor_barcode*.sparkline.png");
 
 	return "<img src='$files[0]' />";
 
@@ -62,7 +62,7 @@ class tables_targetedNGSRunQualityControlMetrics {
 	
 	$id = $record->display('resultName');
 	$normal_barcode = $record->display('normalBarcode');
-	$files = glob("tables/targetedNGSRunQualityControlMetrics/TSimages/$id*/basecaller_results/$normal_barcode*.sparkline.png");
+	$files = glob("images/$id*/basecaller_results/$normal_barcode*.sparkline.png");
 	if (!(is_null($normal_barcode)) && !($normal_barcode == "")){
 		return "<img src='$files[0]' />";
 	}
@@ -73,7 +73,7 @@ class tables_targetedNGSRunQualityControlMetrics {
 	$id = $record->display('resultName');
 	$tumorRNAbarcode = $record->display('tumorRNABarcode');
 	if (!(is_null($tumorRNAbarcode)) && !($tumorRNAbarcode == "" )){
-		$files = glob("tables/targetedNGSRunQualityControlMetrics/TSimages/$id*/basecaller_results/$tumorRNAbarcode*.sparkline.png");
+		$files = glob("images/$id*/basecaller_results/$tumorRNAbarcode*.sparkline.png");
 		return "<img src='$files[0]' />";
 	} else {
 		return;
