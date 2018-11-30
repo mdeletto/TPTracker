@@ -1,0 +1,4 @@
+*/10 * * * * $TPTRACKERPATH/bin/tplTorrentQC-crawler.py
+*/10 * * * * $TPTRACKERPATH/bin/pull_TS_images.sh
+0 0 * * * $TPTRACKERPATH/bin/GENIE_TPTracker_updates.py
+*/1 * * * * $TPTRACKERPATH/bin/TPTracker_automatic_updates.py
