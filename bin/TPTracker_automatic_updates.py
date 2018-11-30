@@ -131,7 +131,7 @@ def __main__():
             db.rollback()  
 
     # Open database connection
-    db = MySQLdb.connect("localhost","root","*23Ft198","tumor_profiling_lab" )
+    db = MySQLdb.connect("mysql","root","*23Ft198","tumor_profiling_lab" )
     
     # prepare a cursor object using cursor() method
     cursor = db.cursor()

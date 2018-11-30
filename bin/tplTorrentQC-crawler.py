@@ -4,6 +4,7 @@ import requests
 import dateutil.parser
 import datetime
 import subprocess
+import os
 from pprint import PrettyPrinter
 
 # Used for testing
@@ -39,8 +40,8 @@ for ip_address in server_list:
                 pass
             else:
                 print resultsName
-                log_stdout = open("/var/log/bifx/tplTorrentQC/%s.%s.stdout.log" % (resultsName, datetime.datetime.now().strftime('%Y%m%dT%H%M%S')), 'a+')
-                log_stderr = open("/var/log/bifx/tplTorrentQC/%s.%s.stderr.log" % (resultsName, datetime.datetime.now().strftime('%Y%m%dT%H%M%S')), 'a+')
+                log_stdout = open("%s/log/tplTorrentQC/%s.%s.stdout.log" % (os.environ['TPTRACKERPATH'], resultsName, datetime.datetime.now().strftime('%Y%m%dT%H%M%S')), 'a+')
+                log_stderr = open("%s/log/tplTorrentQC/%s.%s.stderr.log" % (os.environ['TPTRACKERPATH'], resultsName, datetime.datetime.now().strftime('%Y%m%dT%H%M%S')), 'a+')
                 
                 log_stdout.write(("-" * len(resultsName))+"\n")
                 log_stdout.write("ATTEMPTING TO PROCESS QC DATA FOR: %s\n" % resultsName)

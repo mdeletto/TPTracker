@@ -13,7 +13,6 @@ import datetime
 from collections import defaultdict
 from collections import OrderedDict
 from pprint import PrettyPrinter
-from elasticsearch import Elasticsearch
 from email.mime.multipart import MIMEMultipart
 from __builtin__ import str
 
@@ -561,18 +560,18 @@ def rename_elasticsearch_index_type(test_string):
 def connect_to_database(database_name):
 
     try:
-        cnx = MySQLdb.connect("",
+        cnx = MySQLdb.connect("mysql",
                               "root",
                               "*23Ft198",
                               database_name)
         #print "SUCCESSFULLY CONNECTED TO %s" % database_name
     except MySQLdb.Error as err:
-        if err.errno == err.errno.errorcode.ER_ACCESS_DENIED_ERROR:
-            print("Something is wrong with your user name or password")
-        elif err.errno == err.errno.errorcode.ER_BAD_DB_ERROR:
-            print("Database does not exist")
-        else:
-            print(err)
+#         if err.errno == err.ermysrno.errorcode.ER_ACCESS_DENIED_ERROR:
+#             print("Something is wrong with your user name or password")
+#         elif err.errno == err.errno.errorcode.ER_BAD_DB_ERROR:
+#             print("Database does not exist")
+#         else:
+        print(err)
             
     return cnx
 
