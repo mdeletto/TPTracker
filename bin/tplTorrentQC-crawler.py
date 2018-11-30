@@ -64,7 +64,7 @@ for ip_address in server_list:
                                     log_stdout.write("OK: Proceeding with tplTorrentQC.py\n")
                                     log_stdout.flush()
                                     print resultsName
-                                    subprocess.call("/var/www/TPL/TPTracker/bin/tplTorrentQC.py -a %s --ip-address %s" % (resultsName, ip_address), stdout=log_stdout, stderr=log_stderr, shell=True)
+                                    subprocess.call("%s/bin/tplTorrentQC.py -a %s --ip-address %s" % (os.environ['TPTRACKERPATH'], resultsName, ip_address), stdout=log_stdout, stderr=log_stderr, shell=True)
                                     print resultsName
                                 else:
                                     log_stderr.write("ERROR: Multiple coverageAnalysis results detected.  This option is unsupported for now.  Please delete extra coverageAnalysis results.  Exiting...\n")
