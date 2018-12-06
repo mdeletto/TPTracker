@@ -27,9 +27,11 @@ RUN crontab /etc/cron.d/hello-cron
 # Create the log file to be able to run tail
 RUN touch /var/log/cron.log
 
-# Run the command on container startup
-CMD cron && tail -f /var/log/cron.log
-
 # Make TPTracker log directories
 RUN mkdir -p $TPTRACKERPATH/log/tplTorrentQC && chmod -R 777 $TPTRACKERPATH/log/
 
+# Start apache2 in case it went down during ldap module install
+service apache2 start
+
+# Run the command on container startup
+CMD cron && tail -f /var/log/cron.log

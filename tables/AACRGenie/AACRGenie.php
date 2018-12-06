@@ -39,9 +39,7 @@ class tables_AACRGenie{
          $role = $user->val('Role');
 	 if ($role=='MASTER'){
 		return Dataface_PermissionsTool::getRolePermissions($role);
-        } elseif ($role=='GENIE') {
-		return Dataface_PermissionsTool::getRolePermissions($role);
-	} elseif ($role=='GENIE-D') {
+        } elseif ($role=='GENIE' or $role=='GENIE-D' or $role=='LABDIR') {
 		return Dataface_PermissionsTool::getRolePermissions($role);
 	}
 	else{

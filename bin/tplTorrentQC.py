@@ -1088,7 +1088,7 @@ def main():
 #                                              "tyler.washington@ynhh.org",
 #                                              "DOMINIKA.BAJGUZ@ynhh.org"
                                              ]
-                                email = smtplib.SMTP('localhost')
+                                email = smtplib.SMTP('cas2vp.ynhh.org')
                                 msg = "Subject: %s SEQUENCING RUN COMPLETE\n%s has completed on instrument %s" % (instrument, ts_api_selected_values['coverageAnalysis']['samples'][sample]['torrentSuiteResultName'],
                                                                              instrument)
                                 email.sendmail("TPTracker@ynhh.org", to_emails, msg)
