@@ -1,7 +1,7 @@
 setuptools
 MySQL-python == 1.2.3
 synapseclient >= 1.7.5
-requests == 2.18.4
+requests == 2.20.0
 BeautifulSoup == 3.2.1
 openpyxl == 2.5.6
 python-dateutil == 2.7.2
